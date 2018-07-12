@@ -1,0 +1,20 @@
+hash: 47b6480aec5df26d6bd6116ff60674697320a94fc5f402422066ae237fe51112
+updated: 2018-06-17T12:25:09.039910853+07:00
+imports:
+- name: github.com/coreos/etcd
+  version: 7e4fc7eaa931298732c880a703bccc9c177ae1de
+  subpackages:
+  - Godeps/_workspace/src/github.com/ugorji/go/codec
+  - Godeps/_workspace/src/golang.org/x/net/context
+  - client
+  - pkg/pathutil
+  - pkg/types
+- name: github.com/sirupsen/logrus
+  version: a3f95b5c423586578a4e099b11a46c2479628cac
+- name: golang.org/x/sys
+  version: 9c60d1c508f5134d1ca726b4641db998f2523357
+  subpackages:
+  - unix
+- name: gopkg.in/yaml.v2
+  version: 53feefa2559fb8dfa8d81baad31be332c97d6c77
+testImports: []

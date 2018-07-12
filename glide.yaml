@@ -1,0 +1,6 @@
+package: etcd_client/etcd_updater
+import:
+- package: github.com/coreos/etcd/client
+  version: v2.3.8
+- package: github.com/sirupsen/logrus
+  version: v1.0.2

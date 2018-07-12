@@ -1,0 +1,29 @@
+etcd_endpoint:
+- 'http://127.0.0.1:2379'
+
+# Enable root password
+admin:
+ name: root
+ password: root123 
+
+# Create user
+users:
+- name: root
+  password: root123
+- name: test
+  password: test123
+  roles:
+  - role: test_role
+    permissions:
+      read:
+      - '/test/*'
+  disable: false
+
+# Etcd key
+data: []
+# - key: /example/frome_file
+#   type: file
+#   path: /tmp/config
+# - key: /example/from_value
+#   type: value
+#   value: "123"

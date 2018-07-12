@@ -2,12 +2,14 @@ etcd_endpoint:
 - 'http://127.0.0.1:2379'
 
 # Enable root password
+      # Do not change root password using helm, changed via console or directly
 admin:
  name: root
  password: root123 
 
 # Create user
 users:
+# Do not change root password using helm, changed via console or directly
 - name: root
   password: root123
 - name: test

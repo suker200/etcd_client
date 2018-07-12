@@ -166,10 +166,16 @@ func (c *Config) userChecker(cli client.Client) {
 			apiUser, err = api.GetUser(context.Background(), user.Name)
 		}
 
-		if apiUser.Password != user.Password {
-			if apiUser, err = api.ChangePassword(context.Background(), user.Name, user.Password); err != nil {
-				detectServerError(err)
-				log.Error(err.Error())
+		// Prevent root user changed password, root must be changed directy and update to config
+		if user.Name == "root" && apiUser.Password != user.Password && apiUser.Password != "" {
+			log.Warn("Do not change root password via etcd_client, please change directly and udpate to config")
+		} else {
+			if apiUser.Password != user.Password {
+
+				if apiUser, err = api.ChangePassword(context.Background(), user.Name, user.Password); err != nil {
+					detectServerError(err)
+					log.Error(err.Error())
+				}			
 			}			
 		}
 
